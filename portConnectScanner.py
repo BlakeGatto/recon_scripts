@@ -7,9 +7,9 @@ from datetime import datetime
 
 
 # usage: python portConnectScanner.py 
-##### Creates a socket connection and scans the specified ports ######
 
 
+####### Creates a socket connection to scan specified ports ########
 
 def portScanner(ip_host, port_host):
     s = socket.socket()
@@ -28,7 +28,7 @@ def portScanner(ip_host, port_host):
 
 
 
-
+########### main ##############
 if __name__ == "__main__":
     hosts = ['google.com']
     ports = [22, 445, 80, 443, 3389]

@@ -1,11 +1,12 @@
 #!/usr/bin/python
 
-
 import os
 import sys
 
-# usage: python pythonscript.py ip port protocol
-# lookup for domain name 
+# usage: python pythonscript.py <ip> <port> <protocol>
+
+
+######## Creates a Class Domain that Looks up the domain specs ########### 
 
 class Domain:
     def __init__(self, domain, port, protocol):
@@ -13,6 +14,7 @@ class Domain:
         self.domain = domain
         self.port = port
 	self.protocol = protocol
+
 	
     # defines a method to build a url
     def URL(self):
@@ -22,15 +24,16 @@ class Domain:
 	    URL = 'http://'+self.domain+':'+self.port+'/'
 	    return URL
 
-	# sets up a method to lookup resolve domain to IP using host comamndvia os.system
-    def lookup(self):
+
+    # sets up a method to lookup resolve domain to IP using host comamndvia os.system
+    def lookupSpecs(self):
         os.system("host "+self.domain)
-        return domain.lookup()
+        return domain.lookupSpecs()
 
 
 
 
-
+########### main ################
 if __name__=="__main__":
     script = sys.argv[0]
     ip = sys.argv[1]
@@ -41,7 +44,7 @@ if __name__=="__main__":
     print "[+] IP is: "+ip+" and port is: "+port
        
     domain = Domain(ip, port, protocol)
-    domain.lookup()
+    domain.lookupSpecs()
    
 
 
